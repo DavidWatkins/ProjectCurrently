@@ -1,0 +1,1 @@
+ProjectCurrently will be a quick and easy way to show off what a student is working on with his/her classmates or viewing/supporting project his/her classmates are working on. There will be a different types of projects that people can work on. Users will also be able to support a project by donating money or other food that the project needs. 
