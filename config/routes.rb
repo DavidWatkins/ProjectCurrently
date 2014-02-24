@@ -1,4 +1,8 @@
 ProjectCurrently::Application.routes.draw do
+  resources :comments
+
+  resources :projects
+
   resources :users
 
   root "users#new"
