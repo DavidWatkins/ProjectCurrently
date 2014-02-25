@@ -1,28 +1,12 @@
-== README
+==README==
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+==MongoDB Schema==
+Users(name, email, school)
+Projects(name, description, belongs_to User, has_many Comments, has_many SupportRequests)
+SupportRequest(description, category, percent_filled:integer, belongs_to Project, belongs_to User)
+Comments(content, belongs_to User, belongs_to Project)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+A user can create multiple projects, but a project will only ever belong to one user. A user's school is used to determine where projects are coming from. Currently there are no constraints that define which schools are valid, but that will likely be implemented in the application. 
+A project has one owner, and is also supported by multiple users through SupportRequests which are defined by the owner. There is also a description. Users may comment on project multiple times. 
+A SupportRequest is met by a user and belongs to only one project. They are created by the project owner. Percent_filled depends on what the user is doing and the type of support request, but this will be defined by the application. 
+A comment is created by a user, and can be created multiple times. 
