@@ -1,4 +1,6 @@
 ProjectCurrently::Application.routes.draw do
+  resources :support_requests
+
   resources :comments
 
   resources :projects
