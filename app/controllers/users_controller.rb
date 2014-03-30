@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_user, only: [:new, :create]
+  skip_before_action :is_admin, only: [:new, :create]
 
   # GET /users
   # GET /users.json
