@@ -19,9 +19,9 @@ class User
   validate :is_in_right_school
 
   def is_in_right_school
-  	if :school.nil?
-  		errors.add(:school, "Must have school field")
-  	elsif( not school.to_s.eql? "Columbia University" and not school.to_s.eql? "Yale University" and not school.to_s.eql? "Brown University" )
+    if :school.nil?
+  	errors.add(:school, "Must have school field")
+    elsif( not school.to_s.eql? "Columbia University" and not school.to_s.eql? "Yale University" and not school.to_s.eql? "Brown University" )
       errors.add(:school, "Must be in columbia, yale, or brown, you entered: " + school.to_s)
     end
   end

@@ -19,13 +19,4 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
-  before_filter :is_admin
-
-  def is_admin
-    if current_user and current_user.role.to_s.eql "admin"
-      return true
-    end
-    redirect_to root_url
-  end
-
 end
