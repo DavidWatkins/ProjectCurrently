@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'mongoid',git:'https://github.com/mongoid/mongoid.git'
 
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

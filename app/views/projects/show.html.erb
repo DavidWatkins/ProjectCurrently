@@ -19,7 +19,7 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= image_tag(@project.picture_url, :width => 600) if @project.picture.present? %>
+  <%= image_tag @project.photo.url(:small) %>
 </p>
 
 <h3>Comments</h3>  
