@@ -3,7 +3,6 @@ class Project
   
   include Mongoid::Document
 
-  has_many :support_requests
   has_many :comments
   belongs_to :user
 

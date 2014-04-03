@@ -8,7 +8,7 @@ ProjectCurrently::Application.routes.draw do
   resources :projects
   
   get '/user/:user_id' => 'user#show'
-  get '/dashboard' => 'projects#show'
+  get '/dashboard' => 'projects#dashboard'
 
   resources :users
   resources :sessions, only: [:create, :new, :destroy]

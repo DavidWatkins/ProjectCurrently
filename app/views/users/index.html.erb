@@ -5,13 +5,13 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th></th>
+      <th>School</th>
       <th></th>
       <th></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="rowPadded">
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>

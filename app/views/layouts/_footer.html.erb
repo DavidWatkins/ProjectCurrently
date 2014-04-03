@@ -1,5 +1,9 @@
 <footer>
   <div class="container">
+    <% if @current_user %>
+      Logged in as: <%= @current_user.name %>
+    <% end %>
+    <br />
     David Watkins • Copyright &copy;<%= Time.new.year %> <%= yield :footer %>
   </div>
 </footer>

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 	def create
 		user = nil
 		begin
-			user = User.find_by(email: params[:session][:email].downcase!)
+			user = User.find_by(email: params[:session][:email])
 		rescue Exception
 		end
 			

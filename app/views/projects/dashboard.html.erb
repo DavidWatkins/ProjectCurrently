@@ -1,23 +1,22 @@
-<h2>All Projects</h2>
+<h2>My Projects</h2>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Owner</th>
+      <th>        </th>
       <th>        </th>
       <th>        </th>
       <th>        </th>
     </tr>
   </thead>
 
-  <tbody class="rowPadded">
+  <tbody>
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %>  </td>
         <td><%= project.description %>   </td>
-        <td><%= User.find(project.user_id).name %></td>
         <td><%= link_to 'View', project %>   </td>
         <% if @current_user and (@current_user.role.eql? "admin" or project.user_id == @current_user.id) %>
           <td><%= link_to 'Edit', edit_project_path(project) %>  </td>
@@ -27,11 +26,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<% if @current_user %>
-  <%= link_to 'New Project', new_project_path %>
-<% else %>
-  <%= link_to 'Sign up to create a project', '/signup' %>
-<% end %>
+<br />
+<%= link_to 'New Project', new_project_path %>

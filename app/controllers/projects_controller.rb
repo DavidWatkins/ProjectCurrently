@@ -3,13 +3,18 @@ class ProjectsController < ApplicationController
   skip_before_action :require_user, only: [:embed, :index, :show]
 
   def index
+    current_user
+    @projects = Project.all
+  end
+  
+  def dashboard
     @projects = Project.where(user_id: session[:user_id])
   end
 
   def show
-    @project = Project.where(user_id: session[:user_id]).find(params[:id])
+    current_user
+    @project = Project.find(params[:id])
     @comment = @project.comments.build
-    @support_requests = @project.support_requests
   end
 
   def new
@@ -23,7 +28,6 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user_id = session[:user_id]
     @project.comments = nil
-    @project.support_requests = nil
 
     respond_to do |format|
       if @project.save

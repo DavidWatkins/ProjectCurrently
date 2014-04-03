@@ -22,7 +22,7 @@ class User
     if :school.nil?
   	errors.add(:school, "Must have school field")
     elsif( not school.to_s.eql? "Columbia University" and not school.to_s.eql? "Yale University" and not school.to_s.eql? "Brown University" )
-      errors.add(:school, "Must be in columbia, yale, or brown, you entered: " + school.to_s)
+      errors.add(:school, "Must be in Columbia University, Yale University, or Brown University, you entered: " + school.to_s)
     end
   end
 
