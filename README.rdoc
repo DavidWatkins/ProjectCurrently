@@ -1,5 +1,14 @@
 ==README==
 
+Project Currently allows users to add projects they are currently working on.
+Users can comments on projects.
+An admin can view all current users and change all project data.
+Admins can only be set from rails console.
+
+I added functionality for adding pictures to projects, added a partial for navigation, and implemented twitter bootstrap.
+I also commented on my partners readme.
+User is always redirected to dashboard after logging in. 
+
 ==MongoDB Schema==
 Users(name, email, school)
 Projects(name, description, belongs_to User, has_many Comments, has_many SupportRequests)
