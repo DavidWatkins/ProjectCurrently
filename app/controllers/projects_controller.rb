@@ -1,14 +1,14 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  skip_before_action :require_user, only: [:embed]
+  skip_before_action :require_user, only: [:embed, :index, :show]
 
   def index
     @projects = Project.where(user_id: session[:user_id])
   end
 
   def show
-    @project = Project.where(user_id: session[:user_id]).first()
-    @comments = @project.comments
+    @project = Project.where(user_id: session[:user_id]).find(params[:id])
+    @comment = @project.comments.build
     @support_requests = @project.support_requests
   end
 

@@ -4,11 +4,9 @@ class Comment
   include Mongoid::Document
 
 
-  belongs_to :User
-  belongs_to :Project
+  belongs_to :user
+  belongs_to :project
 
   field :content, type: String
-
-
 end
 

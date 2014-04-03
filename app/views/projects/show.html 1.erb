@@ -25,7 +25,7 @@
 <h1>Comments</h1>  
 
 <ul id="comments">  
-  <% @project.comments.each do |comment| %>  
+  <% @comments.each do |comment| %>  
     <li><%= comment.content %></li>  
   <% end %>  
 </ul>  
@@ -34,11 +34,11 @@
   <ol class="formList">  
     <li>  
       <%= f.label :content %>  
-      <%= f.text_area :content, :rows => 5 %>
-      <%= f.hidden_field :project_id %>
+      <%= f.text_area :content, :rows => 5 %>  
     </li>  
     <li><%= f.submit "Add comment" %></li>  
   </ol>  
 <% end %>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

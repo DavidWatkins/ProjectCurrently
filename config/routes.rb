@@ -2,12 +2,13 @@ ProjectCurrently::Application.routes.draw do
   
   root 'users#new'
 
-  resources :projects do
-    resources :comments
-    resources :support_requests
-  end
-    
+  resources :comments
+  resources :support_requests
+
+  resources :projects
+  
   get '/user/:user_id' => 'user#show'
+  get '/dashboard' => 'projects#show'
 
   resources :users
   resources :sessions, only: [:create, :new, :destroy]
