@@ -6,7 +6,7 @@ class User
 
   has_many :comments
   has_many :projects
-  has_many :supportrequests
+  #has_many :supportrequests
 
   field :name, type: String
   field :email, type: String

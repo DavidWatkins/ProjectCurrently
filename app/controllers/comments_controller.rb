@@ -1,28 +1,27 @@
 class CommentsController < ApplicationController
+  before_action :set_project, [:show, :new, :create, :edit, :update, :destroy]
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-
-  # GET /comments
-  # GET /comments.json
-  def index
-    @comments = Comment.all
-  end
-
-  # GET /comments/1
-  # GET /comments/1.json
+  
+  #def index
+  #  @comments = Comment.all
+  #end
+  
   def show
   end
 
-  # GET /comments/new
   def new
     @comment = Comment.new
+    @form_action = project_path(@project)
+    @new = true
+    render layout: "clean"
   end
 
-  # GET /comments/1/edit
   def edit
+    @form_action = project_path(@project, @comment)
+    @new = false
+    render layout: "clean"
   end
-
-  # POST /comments
-  # POST /comments.json
+  
   def create
     @comment = Comment.new(comment_params)
 

@@ -27,10 +27,13 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'mongoid',git:'https://github.com/mongoid/mongoid.git'
 
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -2,17 +2,22 @@
 <html>
 <head>
   <title>ProjectCurrently</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application.css"%>
+  <%= stylesheet_link_tag "boostrap", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "bootstrap-theme", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "bootstrap", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-	<%= render :partial => "shared/navbar" %>
+	<%= render :partial => "layouts/nav" %>
 
-	<%= yield %>
+	<div class="container">
+	  <%= yield %>
+	</div>
 
-	<%= render :partial => "shared/footer" %>
+	<%= render :partial => "layouts/footer" %>
 
 </body>
 </html>

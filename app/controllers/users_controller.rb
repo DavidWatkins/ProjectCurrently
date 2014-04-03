@@ -5,12 +5,15 @@ class UsersController < ApplicationController
   def index
     if @current_user[:role] == "admin"
       @users = User.all
+    elsif @current_user
+      redirect_to @current_user
     else
-      redirect_to dashboard_url(@current_user)
+      redirect_to root_url
     end
   end
 
   def show
+    @user = @current_user
   end
 
   def new

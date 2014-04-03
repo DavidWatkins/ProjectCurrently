@@ -1,14 +1,17 @@
 
 class Project
-
+  
   include Mongoid::Document
 
-  has_many :SupportRequests
-  has_many :Comments
-  belongs_to :User
+  has_many :support_requests
+  has_many :comments
+  belongs_to :user
 
   field :name, type: String
   field :description, type: String
+  field :picture, type: String
+  
+  mount_uploader :picture, PictureUploader
 
 
 end
